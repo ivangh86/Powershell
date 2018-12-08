@@ -43,4 +43,23 @@ $VMs = Get-AzureRMVm -ResourceGroupName $rgname
 foreach ($VM in $VMs)   
     {
         Stop-AzureRmVM -Name $VM.Name -ResourceGroupName $rgname -Force
-    }   
+    }  
+    
+# Azure Store Info
+
+$storacts = Get-AzureRmStorageAccount
+foreach ($storact in $storacts)
+{
+    Write-Output "$($storact.StorageAccountName), $($storact.sku.Name),  $($storact.PrimaryLocation), $($storact.SecondaryLocation)"
+}
+
+
+# View Availability Set information for VMs
+
+Get-AzureRmVM | Where-Object {$_.ResourceGroupName -eq 'RGNEInfra' } | Format-Table Name,ResourceGroupName -AutoSize
+$AS = Get-AzureRmAvailabilitySet -ResourceGroupName 'RGNEInfra' 
+$AS.VirtualMachinesReferences | ForEach-Object {$VMResource = (Get-AzureRmResource -Id $_.Id);
+    $VM = Get-AzureRMVM -Name $VMResource.Name -ResourceGroup $VMResource.ResourceGroupName -Status; 
+    [PSCustomObject]@{ "Name" = $VM.Name; "FaultDomain"=$VM.PlatformFaultDomain; "UpateDomain"=$VM.PlatformUpdateDomain;
+    }
+}
