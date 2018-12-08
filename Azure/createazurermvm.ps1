@@ -10,9 +10,6 @@ $stotype = 'Standard_GRS';
 $loc = 'northeurope'
 
 #New-AzureRmResourceGroup -Name $rgname -Location $loc -Verbose -Force -ErrorAction Stop
-
-
-
 #New-AzureRmStorageAccount -ResourceGroupName $rgname -Name $stoname -Location $loc -Type $stotype
 #$stoaccount = Get-AzureRmStorageAccount -ResourceGroupName $rgname -Name $stoname 
 
