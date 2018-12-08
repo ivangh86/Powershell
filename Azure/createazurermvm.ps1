@@ -25,6 +25,14 @@ $loc = 'northeurope'
 $vnet = Get-AzureRmVirtualNetwork -Name $virtnetname -ResourceGroupName $rgname
 $subnetID = $vnet.Subnets[0].Id
 
+$pip = New-AzureRmPublicIpAddress -ResourceGroupName $rgname -Name "vip1" `
+ -Location $loc -AllocationMethod Dynamic -DomainNameLabel $vmname.ToLower()
+
+
+ $nic = New-AzureRmNetworkInterface -Force -Name ('nic' + $vmname) -ResourceGroupName $rgname`
+ -Location $loc -SubnetID $subnetID
+
+
 
 
  
