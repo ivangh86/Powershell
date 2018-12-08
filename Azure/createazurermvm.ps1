@@ -26,13 +26,48 @@ $vnet = Get-AzureRmVirtualNetwork -Name $virtnetname -ResourceGroupName $rgname
 $subnetID = $vnet.Subnets[0].Id
 
 $pip = New-AzureRmPublicIpAddress -ResourceGroupName $rgname -Name "vip1" `
- -Location $loc -AllocationMethod Dynamic -DomainNameLabel $vmname.ToLower()
+-Location $loc -AllocationMethod Dynamic -DomainNameLabel $vmname.ToLower()
+
+$nic = New-AzureRmNetworkInterface -Force -Name ('nic' + $vmname) `
+-ResourceGroupName $rgname -Location $loc -SubnetId $subnetID -PrivateIPAddress 10.7.115.13 -DnsServer 10.7.115.13 `
+-PublicIPAddressID $pip.Id
 
 
- $nic = New-AzureRmNetworkInterface -Force -Name ('nic' + $vmname) -ResourceGroupName $rgname`
- -Location $loc -SubnetID $subnetID
+# Add NIC to VM
+$vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
+
+# Using an Azure image
+$osDiskName = $vmname+'osDisk'
+$osDiskCaching = 'ReadWrite'
+$osDiskVhdUri = "https://$stoname.blob.core.winwdos.net/vhds/"+$vmname+"-OS.vhd"
+# Setup OS & Image
+$user = "localadmin"
+$password = 'Pa55word5'
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ($user,$securePassword)
+
+#Get the latest image using version
+$loc = 'northeurope'
+$AzureImageSku = Get-AzureRmVMImage -Location 'northeurope' -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer" -Skus "2012-R2-Datacenter" 
+# Cogemos la mas nueva
+$AzureImageSku = $AzureImageSku |Sort-Object Version -Descending 
+$AzureImageSku[0]
+$AzureImage= $AzureImageSku[0]
+
+# Ejemplo de imagenes ya publicadas
+# Get-AzureRmVMImagePublisher -Location $loc
+# Get-AzureRmVMImageOffer -Location $loc -PublisherName "MicrosoftWindowsServer" 
+# Get-AzureRmVMImageSku -Location $loc -PublisherName "MicrosoftWindowsServer" -Offer "WindowsServer"
+
+$vm = Set-AzureRmVMOperatingSystem -VM $vm -Windows -ComputerName $vmname -Credential $cred
+$vm = Set-AzureRmVMSourceImage -VM $vm -PublisherName $AzureImage.PublisherName -Offer $AzureImage.Offer -Skus $AzureImage.Skus
+$vm = Set-AzureRmVMOSDisk -VM $vm -VhdUri $osDiskVhdUri -Name $osDiskName -CreateOption fromImage -Caching $osDiskCaching
 
 
-
-
+# To create VM from a custom VHD replace with https://azure.microsoft.com/en-en/documentation/articles/virtual-machines-windows
+$sourcevhd = "https://$stoname.blob.core.windows.net/vhds/win2012r2custom-OS.vhd"
+$osDiskVhdUri = "https://$stoname.blob.core.windows.net/vhds/"+$vmname+"-OS.vhd"
+$vm = Set-AzureRmVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskVhdUri - -CreateOption 'fromImage' -SourceImageUri $sourcevhd -Windows -Caching $osDiskCaching
  
+# To create VM from an existing disk replace Using an Azure image commands with:
+$vm = Set-AzureRmVMOSDisk -VM $vm -VhdUri $osDiskVhdUri -Name $osDiskName -CreateOption 'attach' -Windows -Caching $osDiskCaching
