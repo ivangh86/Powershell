@@ -1,0 +1,7 @@
+"Ping","Server","CPU Average / 30 sec","CPU Max","CPU Min","Memory Usage","%Ocupado C:","%Ocupado D:","%Ocupado E:","DiskQueue","3 TopProcess","3 TopProcessPercent","UpTime"
+"GREENOK","XAPBSV3011P","11,50%","23,82%","5,46%","27.4%","C:67.71%","D:41.7%","E:68.01%","0","taskhost#2--taskhost#8--csrss#9","4--4--4","0"
+"GREENOK","XAPBSV3012P","38,04%","65,10%","23,63%","29.06%","C:67.42%","D:41.6%","E:68.1%","0","OSPPSVC--Norskale Agent Host Service--javaw#26","90--85--57","0"
+"GREENOK","XAPBSV3014P","27,77%","38,27%","11,70%","26.66%","C:67.56%","D:41.51%","E:67.87%","0","Norskale Agent Host Service--javaw#2--javaw#10","100--28--9","0"
+"GREENOK","XAPISV3011P","5,41%","13,77%","3,04%","23.67%","C:67.49%","D:41.44%","E:68.77%","0","Norskale Agent Host Service--iexplore#12--javaw#34","14--14--9","0"
+"GREENOK","XAPISV3012P","14,95%","17,98%","13,29%","25.54%","C:68.28%","D:41.37%","E:68.57%","0","iexplore#31--Norskale Agent Host Service--javaw#14","79--79--9","0"
+"GREENOK","XAPISV3013P","10,44%","13,95%","7,79%","26.13%","C:68.39%","D:41.46%","E:69.33%","0","javaw#6--encsvc--Receiver#6","4--4--0","0"

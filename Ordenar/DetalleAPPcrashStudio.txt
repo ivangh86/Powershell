@@ -1,0 +1,16 @@
+Problem signature:
+  Problem Event Name:	APPCRASH
+  Application Name:	LaunchConsole.exe
+  Application Version:	7.15.0.93
+  Application Timestamp:	5984bf45
+  Fault Module Name:	KERNELBASE.dll
+  Fault Module Version:	6.3.9600.18938
+  Fault Module Timestamp:	5a7ddf0a
+  Exception Code:	e0434352
+  Exception Offset:	0000000000008eac
+  OS Version:	6.3.9600.2.0.0.272.7
+  Locale ID:	3082
+  Additional Information 1:	f18a
+  Additional Information 2:	f18a865cd1cc89894e9d42aca5526392
+  Additional Information 3:	0c3d
+  Additional Information 4:	0c3d57362af9801588ec5fe2793c9a42

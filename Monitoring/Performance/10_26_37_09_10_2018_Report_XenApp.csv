@@ -1,0 +1,3 @@
+"Ping","Server","CPU Average / 30 sec","CPU Max","CPU Min","Memory Usage","%Ocupado C:","%Ocupado D:","%Ocupado E:","DiskQueue","3 TopProcess","3 TopProcessPercent","UpTime"
+"GREENOK","XACBSV3201P","6,57%","13,28%","2,17%","20.79%","C:66.22%","D:40.77%","E:62.96%","0","csrss#2--VDARedirector#3--AppVStreamingUX#3","5--0--0","0"
+"GREENOK","XACISV3086P","1,78%","4,69%","0,19%","14.99%","C:68.06%","D:38.4%","E:64.53%","0","wfshell#2--dwm#2--explorer#2","0--0--0","0"

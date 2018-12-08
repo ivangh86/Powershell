@@ -1,0 +1,228 @@
+#webster@carlwebster.com
+#@carlwebster on Twitter
+#http://www.CarlWebster.com
+# Created on October 20, 2013
+
+#Version 2.10 10-Feb-2018
+#	Added Log switch to create a transcript log
+#		Added function TranscriptLogging
+#		Citrix.GroupPolicy.Commands and New-PSDrive break transcript logging so restart logging after each New-PSDrive call
+#		Removed the Log Alias from the Logging parameter
+#	Added variable $xLastConnectionTime in Function OutputMachineDetails to handle the Nullable DateTime property LastConnectionTime
+#	Fixed HTML output for Administrative Scopes
+#	In Function OutputCEIPSetting, initialize the $CEIP variable in case of error with Get-AnalyticsSite
+#	In the OutputMachines functions, don't process manually provisioned catalogs
+#		There is no $Catalog.ProvisioningSchemeId for manually provisioned catalogs
+#	In the OutputMachineDetails function, change the variable used for the Write-Verbose "Output Machine" line
+#		RemotePC and machines not registered have a $Null HostMachineName property
+#		Use the first part of the DNSName property value
+#	In the Policies Word output, if there are no policy settings, add line stating that and skip the Word table functions
+#	In the Summary page, Policies section, added a space before "(AD Policies can contain multiple Citrix policies)"
+#	Most of the calls to Get-Broker* were changed from @XDParams1 to @XDParams2 to add the MaxRecordCount switch
+#		This is to handle entities with more than 250 items (Machine Catalogs, Delivery Groups, Machines/Desktops, Sessions, etc.)
+#	Update functions ShowScriptOutput and ProcessScriptEnd for new Log parameter
+#	Updated help text
+
+#Version 2.09 8-Dec-2017
+#	Updated Function WriteHTMLLine with fixes from the script template
+
+#Version 2.08 28-Nov-2017
+#	Added the following new Computer policy setting:
+#		Browser Content Redirection
+#		Enable XenApp Optimization
+#		Path to XenApp optimization definitions
+#	Added the following new User policy settings:
+#		Browser Content Redirection ACL Configuration
+#		Browser Content Redirection Proxy Configuration
+#		Display lossless indicator
+#		Optimize for 3D graphics workload
+#		Tablet Mode Toggle
+#	Tested with XenApp/XenDesktop 7.16
+#	Update help text
+
+#Version 2.07 5-Sep-2017
+#	Added the following new Computer policy setting:
+#		Logon Exclusion Check
+#	Tested with XenApp/XenDesktop 7.15
+
+#Version 2.06 30-Jun-2017
+#	Added all properties from Get-MonitorConfiguration to Datastore section
+#		For the Monitoring Database Details:
+#			CollectHotfixDataEnabled
+#			DataCollectionEnabled
+#			DetailedSqlOutputEnabled
+#			EnableDayLevelGranularityProcessUtilization
+#			EnableHourLevelGranularityProcessUtilization
+#			EnableMinLevelGranularityProcessUtilization
+#			FullPollStartHour
+#			MonitorQueryTimeoutSeconds
+#			ResolutionPollTimeHours
+#			SyncPollTimeHours
+#		For the Groom Retention Settings in Days:
+#			GroomApplicationErrorsRetentionDays
+#			GroomApplicationFaultsRetentionDays
+#			GroomApplicationInstanceRetentionDays
+#			GroomDeletedRetentionDays
+#			GroomFailuresRetentionDays
+#			GroomHourlyRetentionDays
+#			GroomLoadIndexesRetentionDays
+#			GroomMachineHotfixLogRetentionDays
+#			GroomMachineMetricDataRetentionDays
+#			GroomMachineMetricDaySummaryDataRetentionDays
+#			GroomMinuteRetentionDays
+#			GroomNotificationLogRetentionDays
+#			GroomProcessUsageDayDataRetentionDays
+#			GroomProcessUsageHourDataRetentionDays
+#			GroomProcessUsageMinuteDataRetentionDays
+#			GroomProcessUsageRawDataRetentionDays
+#			GroomResourceUsageDayDataRetentionDays
+#			GroomResourceUsageHourDataRetentionDays
+#			GroomResourceUsageMinuteDataRetentionDays
+#			GroomResourceUsageRawDataRetentionDays
+#			GroomSessionMetricsDataRetentionDays
+#			GroomSessionsRetentionDays
+#			GroomSummariesRetentionDays
+#	Added Function GetSQLVersion
+#	Added Read-Committed Snapshot and SQL Server version data to Datastore table
+#	If any of the databases are configured for mirroring and the database size is null,
+#		use the mirror server's name to calculate the size
+#		if the size is still null, report "Unable to determine"
+#	If SQL Server mirroring is not configured, in the Datastore table use "Not Configured" for the Mirror Server Address
+
+#Version 2.05 26-Jun-2017
+#	Added additional error checking for Site version information
+#		If "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Citrix Desktop Delivery Controller" 
+#		is not found on the computer running the script, then look on the computer specified for -AdminAddress
+#		If still not found on that computer, abort the script
+#	Added back the WorkerGroup policy filter for XenApp 6.x
+#	Added Broker registry keys that can be set on Broker servers
+#		Added Function GetControllerRegistryKeys
+#		Added Function Get-RegistryValue2
+#		Added Function Get-RegKeyToObject
+#		Added Function OutputControllerRegistryKeys
+#		Added new parameter BrokerRegistryKeys
+#		There are 315 registry keys and values that are checked and listed
+#		Updated Function OutputControllers
+#	Added Controller version information to the Controllers section
+#	Added "Database Size" to the Datastores output
+#	Added folder name to Function OutputApplication (Thanks to Brandon Mitchell)
+#	Added four new Cover Page properties
+#		Company Address
+#		Company Email
+#		Company Fax
+#		Company Phone
+#	Added loading the SQL Server assembly so the database size calculations work consistently (thanks to Michael B. Smith)
+#	Added missing function validObject
+#	Added new parameter MaxDetails:
+#		This is the same as using the following parameters:
+#			Administrators
+#			AppDisks
+#			Applications
+#			BrokerRegistryKeys
+#			DeliveryGroups
+#			HardWare
+#			Hosting
+#			Logging
+#			MachineCatalogs
+#			Policies
+#			StoreFront
+#	Added sort applications by AdminFolderName and ApplicationName to Function ProcessApplications (Thanks to Brandon Mitchell)
+#	Added support for version 7.14
+#	Added the following new Computer policy settings:
+#		Application Launch Wait Timeout
+#		Enable monitoring of application failures
+#		Enable monitoring of application failures on Desktop OS VDAs
+#		List of applications excluded from failure monitoring
+#		Logoff Checker Startup Delay (seconds)
+#		Profile Streaming Exclusion list - directories
+#	Added to Delivery Group, LicenseModel and ProductCode
+#	Added Version information to Controllers
+#	Fixed bug when retrieving Filters for a Policy that "applies to all objects in the Site"
+#	Fixed Function Check-LoadedModule
+#	Fixed function OutputPolicySetting
+#	Fixed functions ProcessAppV and OutputAppv to handle multiple AppV servers (Thanks to Brandon Mitchell)
+#	Fixed numerous issues in the Policies section
+#	Fixed the "CPU Usage", "Disk Usage", and "Memory Usage" policy settings
+#		When those settings are Disabled, they are stored as Enabled with a Value of -1
+#	Fixed two calls to Get-BrokerApplication that were retrieving the default of 250 records (Thanks to Brandon Mitchell)
+#	Removed code (240 lines) that made sure all Parameters were set to default values if for some reason they did exist or values were $Null
+#	Reordered the parameters in the help text and parameter list so they match and are grouped better
+#	Replaced _SetDocumentProperty function with Jim Moyle's Set-DocumentProperty function
+#	Updated Function OutputDatastores to:
+#		Add database size
+#		Fix output for mirrored databases
+#		Check if SQL Server assembly is loaded before calculating database size
+#	Updated Function ProcessScriptEnd for the new Cover Page properties and Parameters
+#	Updated Function ShowScriptOptions for the new Cover Page properties and Parameters
+#	Updated Function UpdateDocumentProperties for the new Cover Page properties and Parameters
+#	Updated help text
+#	When -NoPolicies is specified, the Citrix.GroupPolicy.Commands module is no longer searched for
+
+#Version 2.04 released 6-Mar-2017
+#	Fixed wording of more policy names that changed from 7.13 prerelease to RTM
+#		URL Redirection -> Bidirectional Content Redirection
+#		Allow URL Redirection -> Allow Bidirectional Content Redirection
+#		Allow Client URLs -> Allowed URLs to be redirected to Client
+#		Allow VDA URLs -> Allowed URLs to be redirected to VDA
+#		UPM - Enable Default Exclusion List - directories -> Enable Default Exclusion List - directories
+#		UPM - !ctx_localappdata!\Microsoft\Application Shortcuts -> UPM - !ctx_localappdata!\Microsoft\Windows\Application Shortcuts
+#		UPM - !ctx_localappdata!\Microsoft\Burn -> UPM - !ctx_localappdata!\Microsoft\Windows\Burn
+
+#Version 2.03 released 3-Mar-2017
+#	Fixed bug reported by P. Ewing in Functions ConfigLogPreferences and OutputDatastores
+#	Fixed wording of policy setting (thanks to Esther Barthel):
+#		"Profile Management\File system\Default Exclusions\UPM - !ctx_localappdata!\Microsoft\CD Burning" to 
+#		"Profile Management\File system\Default Exclusions\UPM - !ctx_localappdata!\Microsoft\Windows\CD Burning"
+
+#Version 2.02 released 1-Mar-2017
+#	Added Application Group details
+#	Added Application Group "SingleAppPerSession" property
+#	Updated help text
+
+#Version 2.01 released 28-Feb-2017
+#	Added -Dev and -ScriptInfo parameters
+#	Fixed several undefined variables
+#	Updated help text
+
+# Version 2.0 released on 21-Feb-2017
+#	Added "Launch in user's home zone" to Delivery Group details
+#	Added AppDisks
+#	Added AppDNA and the ability to process just the AppDNA section
+#	Added Break statements to most of the Switch statements
+#	Added Chinese language support
+#	Added Configuration Logging Preferences
+#		Show correct database size, not the wrong size reported in Studio
+#	Added Description to Machine Catalog details
+#	Added Desktop Entitlement settings to Delivery Groups that are configured to deliver desktops
+#	Added new policies
+#	Added RemotePC OU and Subfolder properties to RemotePC Machine Catalog details
+#	Added "Restrict launches to machines with tag" to Random/Desktops only and RemotePC Delivery Groups
+#	Added Summary Report page
+#	Added support for VDA versions 7.8 and 7.9 (which includes 7.11/7.12/7.13)
+#	Added support for XenApp/XenDesktop 7.8, 7.9, 7.11, 7.12, 7.13
+#	Added to machine catalog information for RemotePC, "No. of Machines" and "Allocated Machines"
+#	Brought core functions up-to-date with the other scripts
+#	Fix numerous typos
+#	Fixed formatting issues with HTML headings output
+#	Fixed French wording for Table of Contents 2 (Thanks to David Rouquier)
+#	Fixed the “No. of machines” for Machine Catalogs so it is now accurate
+#	Fixed the Machine Catalog details to match what is shown in Studio
+#	For Machine Catalog details, for PVS provisioned catalogs, add the PVS Server address
+#	For Persistent machines with changes stored on the local disk, added the “VM copy mode”
+#	For Personal vDisk catalogs, added PvD size and drive letter
+#	For Random catalog types (SingleSession and MultiSession), added "Temporary memory cache size (MB)" and "Temporary disk cache size (GB)"
+#	Removed unnecessary blank lines in policy value output
+#	Removed snapin citrix.common.commands as it is removed in 7.13 and no cmdlets are used from that snapin
+#	Updated error message for missing snapins to state requires a 7.8 or later Controller
+#	Updated help text
+#	Updated Machine/Desktop details to match what is shown in Studio
+#	Updated the Delivery Group details section with the changes to how "Delivering" is determined for XenApp Delivery Groups
+#	Updated the Delivery Group "Restart Schedule" wording to match the changes in Studio
+#	Updated the Delivery Group "Restart Schedule" to include the PowerShell only setting of "Restrict to tag" for 7.12 and later
+#	Updated the Delivery Group section to match all the changes made in Studio
+#	Updated version checking
+#		Now display running version in error messages
+#	Updated version checking registry access to allow 32-bit PowerShell access to 64-bit registry
+#
+
+# Version 1.0 released to the community on June 12, 2015

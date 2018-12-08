@@ -1,0 +1,128 @@
+2017-09-18 07:52:52,576: 1 INFO  – 
+2017-09-18 07:52:52,608: 1 INFO  – ***************
+2017-09-18 07:52:52,608: 1 INFO  – 
+2017-09-18 07:52:52,608: 1 INFO  – Citrix Health Assistant v1.2.0.34
+2017-09-18 07:52:52,608: 1 INFO  – 
+2017-09-18 07:52:52,608: 1 INFO  – ***************
+2017-09-18 07:52:52,608: 1 INFO  – 
+2017-09-18 07:52:52,826: 1 INFO  – 
+2017-09-18 07:52:52,826: 1 INFO  – Start VDA health check...
+2017-09-18 07:52:52,826: 1 INFO  – >>>>Step 1: (VDA software installation)  Begin. <<<<
+2017-09-18 07:52:52,826: 1 INFO  – VDA image path is C:\Program Files\Citrix\Virtual Desktop Agent\BrokerAgent.exe.
+2017-09-18 07:52:52,826: 1 INFO  – VDA version number is 7.11.0.11.
+2017-09-18 07:52:52,842: 1 INFO  – Registry path at HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\VirtualDesktopAgent is fine.
+2017-09-18 07:52:52,842: 1 INFO  – Registry path at HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\VirtualDesktopAgent\InstallData\Location is fine.
+2017-09-18 07:52:52,842: 1 INFO  – [UI Message] VDA software installation verified.
+2017-09-18 07:52:52,842: 1 INFO  – <<<< Step 1: VDA software installation End. Test Success. >>>>
+2017-09-18 07:52:52,858: 1 INFO  – >>>>Step 2: (VDA machine domain membership)  Begin. <<<<
+2017-09-18 07:52:52,858: 1 DEBUG – DNS Lookup():
+2017-09-18 07:52:52,873: 1 DEBUG – Host Name  = wcpnhidsd129.tsb.banks.adgbs.com
+2017-09-18 07:52:52,873: 1 INFO  – VDA Machine:
+2017-09-18 07:52:52,873: 1 DEBUG – NetBIOS Name = WCPNHIDSD129
+2017-09-18 07:52:52,873: 1 INFO  – OS Version = Microsoft Windows NT 6.2.9200.0
+2017-09-18 07:52:52,873: 1 INFO  – Platform = X64 Platform
+2017-09-18 07:52:52,889: 1 DEBUG – Computer Domain: tsb.banks.adgbs.com
+2017-09-18 07:52:52,889: 1 DEBUG – Role = Member Server
+2017-09-18 07:52:52,967: 1 DEBUG – Membership is Verified, SID:S-1-5-21-1626604397-548540394-4252500694-16647
+2017-09-18 07:52:52,967: 1 DEBUG – Machine domain membership and DNS resolution verified.Machine SID retrieved.
+2017-09-18 07:52:52,967: 1 INFO  – [UI Message] Machine domain membership and DNS resolution verified.Machine SID retrieved successfully.
+2017-09-18 07:52:52,967: 1 INFO  – <<<< Step 2: VDA machine domain membership End. Test Success. >>>>
+2017-09-18 07:52:52,967: 1 INFO  – >>>>Step 3: (VDA communication port availability)  Begin. <<<<
+2017-09-18 07:52:53,123: 1 INFO  – [UI Message] Required port access verified.
+2017-09-18 07:52:53,139: 1 INFO  – <<<< Step 3: VDA communication port availability End. Test Success. >>>>
+2017-09-18 07:52:53,139: 1 INFO  – >>>>Step 4: (VDA services status)  Begin. <<<<
+2017-09-18 07:52:53,139: 1 INFO  – OS VDA related services check.
+2017-09-18 07:52:53,154: 1 DEBUG – Service : BrokerAgent ("Citrix Desktop Service")
+2017-09-18 07:52:53,154: 1 DEBUG – Status = Win32OwnProcess, Running
+2017-09-18 07:52:53,154: 1 INFO  – Prereq =
+2017-09-18 07:52:53,154: 1 DEBUG – LanmanWorkstation (Win32ShareProcess), Running
+2017-09-18 07:52:53,154: 1 INFO  – Service : BrokerAgent is running
+2017-09-18 07:52:53,154: 1 INFO  – VDA machine region time is 18/09/2017 07:52:53
+2017-09-18 07:52:53,514: 1 INFO  – [UI Message] All VDA services are running No VDA service errors were found in the event log for the past five minutes.
+2017-09-18 07:52:53,529: 1 INFO  – <<<< Step 4: VDA services status End. Test Success. >>>>
+2017-09-18 07:52:53,529: 1 INFO  – >>>>Step 5: (Windows firewall configuration)  Begin. <<<<
+2017-09-18 07:52:53,623: 1 INFO  – Status : Disabled
+2017-09-18 07:52:53,623: 1 INFO  – [UI Message] The Windows Firewall Service allows communication between the VDA and the Controller.
+2017-09-18 07:52:53,639: 1 INFO  – <<<< Step 5: Windows firewall configuration End. Test Success. >>>>
+2017-09-18 07:52:53,639: 1 INFO  – >>>>Step 6: (Communication with Controller)  Begin. <<<<
+2017-09-18 07:52:53,639: 1 INFO  – Found 0 hosts in hosts file.
+2017-09-18 07:52:53,639: 1 DEBUG – Farm GUID (local) : NOT SET
+2017-09-18 07:52:53,639: 1 DEBUG – Farm GUID In Use : NOT SET
+2017-09-18 07:52:53,639: 1 INFO  – Find farm Guid doesn't Exist.
+2017-09-18 07:52:53,654: 1 INFO  – not find any Controller in [VdaData].
+2017-09-18 07:52:53,654: 1 INFO  – Registry based Controller list (ListOfDDCs) :
+2017-09-18 07:52:53,654: 1 DEBUG – Controller : wcpnhiddc001.tsb.banks.adgbs.com:80
+2017-09-18 07:52:53,654: 1 DEBUG – DNS Lookup(Local Machine):
+2017-09-18 07:52:53,670: 1 DEBUG – Host Name  = wcpnhiddc001.tsb.banks.adgbs.com
+2017-09-18 07:52:53,670: 1 INFO  – Ping Service: /Citrix/CdsController/IRegistrar
+2017-09-18 07:52:53,686: 1 DEBUG – Connect = Tcp to 10.184.153.13:80
+2017-09-18 07:52:53,733: 1 INFO  – Service = Listening
+2017-09-18 07:52:53,733: 1 DEBUG – Controller : wcpnhiddc002.tsb.banks.adgbs.com:80
+2017-09-18 07:52:53,733: 1 DEBUG – DNS Lookup(Local Machine):
+2017-09-18 07:52:53,733: 1 DEBUG – Host Name  = wcpnhiddc002.tsb.banks.adgbs.com
+2017-09-18 07:52:53,733: 1 INFO  – Ping Service: /Citrix/CdsController/IRegistrar
+2017-09-18 07:52:53,733: 1 DEBUG – Connect = Tcp to 10.184.153.14:80
+2017-09-18 07:52:53,811: 1 INFO  – Service = Listening
+2017-09-18 07:52:53,811: 1 DEBUG – Controller : wcpnhiddc003.tsb.banks.adgbs.com:80
+2017-09-18 07:52:53,811: 1 DEBUG – DNS Lookup(Local Machine):
+2017-09-18 07:52:53,811: 1 DEBUG – Host Name  = wcpnhiddc003.tsb.banks.adgbs.com
+2017-09-18 07:52:53,811: 1 INFO  – Ping Service: /Citrix/CdsController/IRegistrar
+2017-09-18 07:52:53,811: 1 DEBUG – Connect = Tcp to 10.184.153.15:80
+2017-09-18 07:52:53,889: 1 INFO  – Service = Listening
+2017-09-18 07:52:53,889: 1 DEBUG – Controller : wcpnhiddc004.tsb.banks.adgbs.com:80
+2017-09-18 07:52:53,889: 1 DEBUG – DNS Lookup(Local Machine):
+2017-09-18 07:52:53,889: 1 DEBUG – Host Name  = wcpnhiddc004.tsb.banks.adgbs.com
+2017-09-18 07:52:53,889: 1 INFO  – Ping Service: /Citrix/CdsController/IRegistrar
+2017-09-18 07:52:53,889: 1 DEBUG – Connect = Tcp to 10.184.153.16:80
+2017-09-18 07:52:53,967: 1 INFO  – Service = Listening
+2017-09-18 07:52:53,967: 1 INFO  – [UI Message] VDA and Controller communication verified.
+2017-09-18 07:52:53,967: 1 INFO  – <<<< Step 6: Communication with Controller End. Test Success. >>>>
+2017-09-18 07:52:53,967: 1 INFO  – >>>>Step 7: (Time sync with Controller)  Begin. <<<<
+2017-09-18 07:52:53,967: 1 DEBUG – Controller:wcpnhiddc001.tsb.banks.adgbs.com
+2017-09-18 07:52:54,108: 1 DEBUG – Controller:wcpnhiddc002.tsb.banks.adgbs.com
+2017-09-18 07:52:54,186: 1 DEBUG – Controller:wcpnhiddc003.tsb.banks.adgbs.com
+2017-09-18 07:52:54,279: 1 DEBUG – Controller:wcpnhiddc004.tsb.banks.adgbs.com
+2017-09-18 07:52:54,358: 1 INFO  – [UI Message] The time difference between Controller and VDA is less than five minutes.
+2017-09-18 07:52:54,358: 1 INFO  – <<<< Step 7: Time sync with Controller End. Test Success. >>>>
+2017-09-18 07:52:54,358: 1 INFO  – >>>>Step 8: (VDA registration status)  Begin. <<<<
+2017-09-18 07:52:54,358: 1 INFO  – VDA Registered status is 2
+2017-09-18 07:52:54,358: 1 DEBUG – Registered Controller FQDN is wcpnhiddc001.tsb.banks.adgbs.com
+2017-09-18 07:52:54,358: 1 INFO  – Registered time is 09/18/2017 06:50:59
+2017-09-18 07:52:54,358: 1 INFO  – [UI Message] VDA is registered.
+2017-09-18 07:52:54,358: 1 INFO  – <<<< Step 8: VDA registration status End. Test Success. >>>>
+2017-09-18 07:52:54,373: 1 INFO  – >>>>Step 9: (Session launch communication port availability)  Begin. <<<<
+2017-09-18 07:52:54,654: 1 INFO  – [UI Message] Required port access verified.
+2017-09-18 07:52:54,654: 1 INFO  – <<<< Step 9: Session launch communication port availability End. Test Success. >>>>
+2017-09-18 07:52:54,670: 1 INFO  – >>>>Step 10: (Session launch services status)  Begin. <<<<
+2017-09-18 07:52:54,670: 1 INFO  – OS VDA session launch related services check.
+2017-09-18 07:52:54,670: 1 DEBUG – Service : Citrix Encryption Service ("Citrix Encryption Service")
+2017-09-18 07:52:54,670: 1 DEBUG – Status = Win32OwnProcess, Running
+2017-09-18 07:52:54,670: 1 INFO  – Service : Citrix Encryption Service is running
+2017-09-18 07:52:54,670: 1 DEBUG – Service : cpsvc ("Citrix Print Manager Service")
+2017-09-18 07:52:54,670: 1 DEBUG – Status = Win32OwnProcess, Running
+2017-09-18 07:52:54,670: 1 INFO  – Prereq =
+2017-09-18 07:52:54,670: 1 DEBUG – RpcSs (Win32ShareProcess), Running
+2017-09-18 07:52:54,670: 1 DEBUG – Spooler (Win32OwnProcess, InteractiveProcess), Running
+2017-09-18 07:52:54,670: 1 INFO  – Service : cpsvc is running
+2017-09-18 07:52:54,701: 1 INFO  – VDA ProvisioningType is not MCS.
+2017-09-18 07:52:54,701: 1 INFO  – OS VDA session launch related services check.
+2017-09-18 07:52:54,701: 1 DEBUG – Service : CtxFlashSvc ("Citrix HDX MediaStream for Flash Service")
+2017-09-18 07:52:54,701: 1 DEBUG – Status = Win32OwnProcess, Running
+2017-09-18 07:52:54,701: 1 INFO  – Service : CtxFlashSvc is running
+2017-09-18 07:52:54,717: 1 DEBUG – Service : CitrixCseEngine ("Citrix Group Policy Engine")
+2017-09-18 07:52:54,717: 1 DEBUG – Status = Win32OwnProcess, Running
+2017-09-18 07:52:54,717: 1 INFO  – Prereq =
+2017-09-18 07:52:54,717: 1 DEBUG – RpcSs (Win32ShareProcess), Running
+2017-09-18 07:52:54,717: 1 INFO  – Service : CitrixCseEngine is running
+2017-09-18 07:52:54,717: 1 INFO  – VDA machine region time is 18/09/2017 07:52:54
+2017-09-18 07:52:54,764: 1 INFO  – [UI Message] All session launch related services are verified on VDA. No service errors were found in the event log for the past five minutes.
+2017-09-18 07:52:54,764: 1 INFO  – <<<< Step 10: Session launch services status End. Test Success. >>>>
+2017-09-18 07:52:54,779: 1 INFO  – >>>>Step 11: (Session launch windows firewall configuration)  Begin. <<<<
+2017-09-18 07:52:54,811: 1 INFO  – Status : Disabled
+2017-09-18 07:52:54,842: 1 INFO  – Status : Disabled
+2017-09-18 07:52:54,842: 1 INFO  – [UI Message] The Windows Firewall Service allows communication between the VDA and the Controller.
+2017-09-18 07:52:54,858: 1 INFO  – <<<< Step 11: Session launch windows firewall configuration End. Test Success. >>>>
+2017-09-18 07:52:54,858: 1 INFO  – All tests passed. The VDA can communicate and register with the Controller.
+2017-09-18 07:52:54,858: 1 INFO  – Start uploading log to Citrix Insight Service...
+2017-09-18 07:52:55,670: 1 DEBUG – Log data (0 of 0) bytes unsuccessfully uploaded.
+2017-09-18 07:52:55,670: 1 INFO  – Failed to uploaded log to Citrix Insight Service.

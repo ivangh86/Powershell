@@ -1,0 +1,1 @@
+Get-XASession | where-object {$_.BrowserName -eq "TSB UAT Proteo4UK"} | select-object AccountName, state, ServerName, ClientName, LogOnTime | Sort-Object AccountName

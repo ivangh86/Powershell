@@ -1,0 +1,3 @@
+1. En el nameADM.txt poner el nombre del .adm a borrar (SOLO EN NOMBRE, SIN LA EXTENSIÓN .ADM)
+2. En el GPOs.txt poner las GPOs que están afectadas por el .adm en cuestión y quieres que se elimine del SYSVOL.
+3. Ejecutar script DeleteADMsGPO, deja un .txt donde están los logs "logDeleteADMsGPO.txt".

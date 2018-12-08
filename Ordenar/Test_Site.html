@@ -1,0 +1,1961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Site Configuration Testing Report</title>
+    <style type="text/css">
+          body
+          {
+          background: #ffffff;
+          color: #333333;
+          font-family: Segoe UI, Tahoma, sans-serif;
+          font-size: 12px;
+          margin: 0;
+          }
+
+          div.section
+          {
+          margin: 20px 0;
+          }
+
+          div#content
+          {
+          margin: 32px 20px;
+          }
+
+          div#titlebar
+          {
+          background: #5c5f63;
+          background-image: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%01%00%00%004%08%02%00%00%00%C4%C0%C5%C0%00%00%00%01sRGB%00%AE%CE%1C%E9%00%00%00%06bKGD%00%FF%00%FF%00%FF%A0%BD%A7%93%00%00%00%09pHYs%00%00%0B%12%00%00%0B%12%01%D2%DD~%FC%00%00%00%07tIME%07%DC%05%18%09%1F%07%A8%8A%26F%00%00%00KIDAT%08%D7m%8D1%0E%800%0C%03%AF~.%03%03%FFW%8E%A1)%05%89)%8Eu%B69%CE%2BC%A3%841%AF%18%AA%3DLA%D0%08%CD%1A%20%EAd%25%AE%BF3%BC%B4%9D%A5%7BV%1F%12%AD%EE%DA%1B%FE%E4%F7%5Es%8F%F7an2%D5U%5C%22B%94%88%00%00%00%00IEND%AEB%60%82");
+          border-top: 1px solid #5b5e62;
+          height: 52px;
+          padding: 0 20px;
+          }
+
+          div#titlebarinner
+          {
+          width: 100%;
+          }
+
+          h1
+          {
+          color: #1976D2;
+          font-size: 24px;
+          font-weight: bold;
+          margin: 4px 0;
+          }
+
+          h2
+          {
+          font-size: 16px;
+          font-weight: bold;
+          margin: 4px 0;
+          }
+
+          h2#createdby
+          {
+          font-weight: normal;
+          }
+
+          h3
+          {
+          font-size: inherit;
+          font-weight: normal;
+          margin: 4px 0;
+          }
+
+          img#citrixlogo
+          {
+          float: right;
+          }
+
+          span#topheadertext
+          {
+          color: #ffffff;
+          float: left;
+          font-size: 24px;
+          font-weight: bold;
+          margin: 10px 0;
+          }
+
+          table
+          {
+          border: 1px solid #b3b3b3;
+          border-collapse: collapse;
+          font-size: inherit;
+          width: 100%;
+          }
+
+          table.innertable
+          {
+          border: none;
+          width: inherit;
+          }
+
+          table.innertable td
+          {
+          padding: 0 15px;
+          }
+
+          table.innertable tr th
+          {
+          background: inherit;
+          border: none;
+          height: inherit;
+          padding: 0 15px 5px;
+          }
+
+          table.innertable tr
+          {
+          border: none;
+          }
+
+          td
+          {
+          padding: 5px 15px;
+          vertical-align: top;
+          }
+
+          td.first, th.first
+          {
+          border-left: 1px solid #b3b3b3;
+          }
+
+          th
+          {
+          border-left: 1px solid #cccccc;
+          font-weight: bold;
+          height: 32px;
+          padding-left: 15px;
+          text-align: left;
+          }
+
+          td.last, th.last
+          {
+          border-right: 1px solid #b3b3b3;
+          }
+
+          tr
+          {
+          border-top: 1px solid #eeeeee;
+          }
+
+          tr.dark
+          {
+          color: #ffffff;
+          }
+
+          tr.dark td
+          {
+          background: #999999;
+          }
+
+          tr.dark th
+          {
+          background: #666666;
+          }
+
+          tr.dark th.first
+          {
+          border-left: 1px solid #666666;
+          }
+
+          tr.dark th.last
+          {
+          border-right: 1px solid #666666;
+          }
+
+          tr.darkheader
+          {
+          border-top: 1px solid #666666;
+          border-bottom: 1px solid #666666;
+          }
+
+          tr.light
+          {
+          border: 0;
+          }
+
+          tr.light td
+          {
+          background: #eeeeee;
+          }
+
+          tr.light th
+          {
+          background: #cccccc;
+          border-left-color: #b3b3b3;
+          }
+
+          tr.lightheader
+          {
+          border-top: 1px solid #cccccc;
+          border-bottom: 1px solid #cccccc;
+          }
+
+          tr.lightheader th.first
+          {
+          border-left: 1px solid #cccccc;
+          }
+
+          tr.lightheader th.last
+          {
+          border-right: 1px solid #cccccc;
+          }
+
+          tr.lightsubheader td
+          {
+          font-weight: bold;
+          }
+
+          .indented
+          {
+          padding-left: 40px;
+          }
+        </style>
+    <style type="text/css" xmlns="">
+            ul {
+            list-style-type: none;
+            }
+
+            li.Error
+            {
+            list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFFJREFUeNpiYBh+4D8DQwIQ92MR7wfJEaP5PxTPRxKfjySegM8AZIX/oXwMMUKuQNdAvGYChmDVzESLWCDfCxQHIsXRiGTIfByuSxiGeQcgwABq7XYnSXRObAAAAABJRU5ErkJggg==");
+            }
+
+            li.FatalError
+            {
+            list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFFJREFUeNpiYBh+4D8DQwIQ92MR7wfJEaP5PxTPRxKfjySegM8AZIX/oXwMMUKuQNdAvGYChmDVzESLWCDfCxQHIsXRiGTIfByuSxiGeQcgwABq7XYnSXRObAAAAABJRU5ErkJggg==");
+            }
+
+            li.Warning
+            {
+            list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOlJREFUeNpiYBhowIhL4kuisAKQOg/lGvLMf/sAmzomPIbXA7EAFNeT5AKo7feZ5HTA/H+ProAoRVyuwGbA/h9zcv7DwM9lVf9BYkR5AajQAUg5MHLxwcX+f/sEohygcgTDAOzfvzePwgWQ2PV4DQDakACyCebv/28eQ/EjmBIHqBo4YMFmOxab0dUswHAB0OQCIKWArPL37hkMf44uRzdAAaoWEY1AAVBc34fGOURCRI6BswES8N9ylNEN+QCN1g8wFyQga4YbwsWPQiMBAageeBhgJBBQwH0rM4JG40dsYfGAYVAAgAADAJUgXMgGY/utAAAAAElFTkSuQmCC");
+            }
+
+            li.NotRun
+            {
+            list-style-type:none;
+            }
+
+            p.testName
+            {
+            margin: 0;
+            font-weight: bold;
+            }
+
+            span.testTargetName
+            {
+            font-weight: bold;
+            }
+
+            span.controllersHdr
+            {
+            font-weight: bold;
+            }
+
+            p.runOnSite
+            {
+            font-weight: bold;
+            }
+        </style>
+  </head>
+  <body>
+    <div id="titlebar">
+      <div id="titlebarinner">
+        <span id="topheadertext">Site Configuration Testing Report</span>
+        <img id="citrixlogo" src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%3E%00%00%004%08%02%00%00%00%5D8%1Cu%00%00%00%01sRGB%00%AE%CE%1C%E9%00%00%00%09pHYs%00%00%0B%12%00%00%0B%12%01%D2%DD~%FC%00%00%00%07tIME%07%DC%05%18%09%14(%E0%AF%C2%D4%00%00%0B%89IDATh%DE%ADZK%8C%9C%C5%11%FEj2%97%19%8E%BB%BEy%C6%87%04%EF%A2(%C1%BB%BE%84%5D%2F%0E%8A%1D'J%84Ex.k%C0%C6%80!%01%A2%40x%1D%10y%8B%08%05E%91%A2%60%C7%C6%08c%3B%CE%01%0C%89%84%B1C%84w%D7D%8A0%0E%17%3CK.%DEY%C8%01%96%E3%8Co%FD%E5%D0%5D%D5%D5%FF%8C%F3RF~%EC%F4%DF%7Fwuu%D5WU_%AD%7C%E7%C1%87%F0%7F%FC%10%90%F8o%FC)%0DR%EC%CB%C0%E4%A1o%FF%07%93%EB%A0%0D%92%80%08%08%01%09%81P%08%88%90%04%D2%A3%F8%3FH%00%944J%DDR%20%F4%BB%09D%9F%91%02!(%12%8F%22%F1q%DC%1E%20%00I%2BK%3Cz%3C%3C%F5%89%90%94%24%19(%82z%40%F0%1BF%99%98%16%23%F3%C1%E2(%C0%C0%ACM%E4%8D%DD%7B%26%01%D3v%10%00D%00%24%A4%2F%D4%17%DD%FA%D4U%E2%F1%B2%16%02%A9%CA5U%A0.%04%936H%B1%E3%93%8C%E7%86%EA%25%3D%B3%FF%93%C2A%89c%02D3%81%C0%A4%89%BA%8F%93%18%9F%DB%AA%90%B8r%D2%AC%99%8A%E9%5B%F4%EA%E2%7Cq%F6B%02u%22-lj%10%04%06%81%84h5i%17R%92%B6%A2%E1%08%C8%90%84%D6%9B%A5%E8JTsI%E2%26%01%18%20%12%E2%ECh%9Dv%9B%94%20%10%20%80B%EA%A5K%B2R%12%40%80%DA%1E%00%B0n%C6%81%E2%F6Y%18%81.%E4tD%14%86%A4%D6%5E%98%BASm%BE%B1%BC%9FZ%88%BE%E9%DEf%1A%F7%D2E5%88Yn%BDP*%11%CF%A9%BE%90%C4%F5%DA%A3%9A%13%9C%1BA%84%0C%EA%E3%D1D%D2%3C%7B3%FAd%BAy%B5%E7%7C%1A8a%F5*%91V%153%BD%00%1A%3C%A8%D6%9D%96%0D%A1%10%E2N%09%7BX(%8B%F1j%D5%C4%82%07%B1%B4%91%BA%5D%E5%1E%11%0D-%C0%C3%91d%D0%22)%EA%E6y%1DQ%3F7%1B%A8%D3%EB)%AA%86%0A%98%92%C5%11%E7%60%A2%10%22%E5%95K%F4%04Et%BBlq%AAU%0Df%203%2Fd%FC%070%F3%8E((j%04%C9%B0%D4%04%EA%40%20%24%3D%A47%D5%90%ED%99%B6%18%01%09%A0%F3%2F%A7W%DA%95%D0%01%9E%40B%D2D%E9%0B0%CFM%8B%B83')%0D%173h%C7%EB%22%D4%60DWN%DA%87%BA%E4%80%E7%C1%05%2F%BD%07%E7W%8AWz%EC%EC9)%3Ay%1Bq%26%1FG%18%F1%D90%9A%F9%F4*%97%DD-%EA%A6a%09%09%8E%92%F6D%BCZ%0D%E3D%CC%00%85%0CR%B8%1F%B30%A2%FAI%B3%C5G%E0t%814Y%40%40D%BD'%DDY%A0%C5U%09%D1%3EUm!P%EA%24%A5%F00%B5%92%D2zt%DC%8D%3A%07%2F%C3m%F2J)%9D6%A76.Z%7B%7C)%B0%A0%08%D5%CC%92e%A4eM%11%95%C1%EC%89%A4%86%95%F8s%0C%D8%CDFC%E7%3A%CB%8B%F3-F%BB%2F!%AE%12_%8FO%09%82!Nu%0F%F5%0F%19%D2XH%CBD1%92%E8%60%FE%81%60%3D%9D%89%8A%EF9%1Ad%D3%BE%F9%C6%1B%B6%7C%E5%1A%00K%1F%FC%FD%D7%BF%D9%DB%EF%F75%DC%04Z%E6%C6%AC9%16A%C9%D2%00%8D%A9.%C8xO%12%8D%F5R%A8%C6C%ABK%98%C8Z%BA%3Cq%D9%16%C5%F4Nrb%C3%17%A3%DC%00%C6%D6_%3E%7D%D5%97%40%BB%1C7S%A5s%9F%94%83%A4%7B%80%D8S%15Z%EF%C5n%8A%08i%82eg4C%F0%82!%81c%CC%1E%0A%EBR%BB%13%B6%D6%AE%F56%DFj%AD%25-%17%A2%8B%24%83Y%B6%DA%83%B8%F0d%FF%25%D4%93%B8X%CA%87%10%A4%8AZ9%D9W%A8%8A%B1%09uF%60%D4%B5%A5%92%8E%10%DD%95%15%2FN%B7%BB%12%9DK%2C%9B%8Bp%05%97yV%E1%B4%08%03~qIw%AC%93R%C0%CCx!%D5%BC%C7%92T%D4%F2%25%15%89Q%86%92w%CF%FD%ED%D4%9B%7F%8E%3F%2F-%7D%B0x%E6%2F%D0%FB5%97%CB%D1%A2%B8g%5D%23%04%D0CX6%D9%40%22X~%91%1D%DF%C6%02B%20%9Ds%0455%C8%AE%DD%7BL%DF)%BC%A3%88B%F6%B5%D9l%F6%FB%7D%F1%17%8F2%A2h%20%1C%5C%01%97XS%86Uw%97z%AB%F2z%3Dh%02%3E%BE~%FDW%B7n%99%98%B8R%95%FD%DE%E2%99%B7%CF%9D%7B%8F%C2%83%FB%F7%DAk%BBv%EF9x%60%EF%BF%A8Nw%EE%BE%F7%E0%81%E7%06%C7%2F%5E%BCx%F2%D4%9B%C7_%FDcT%90%9F%B3k%F7%1E%00%8F%3D%FA%F0%F8%D8z%BB%DE%A7%9F%F9%05%88%07%1F%F8%F6%C4%86%24%D2%EA%EA%A7O%FD%E8%A7%8F%3F%F2P%AB%B5ve%E5%C3ZT%D5%DDw%EE%7C%EC%D1%87Mn%00%93%13W%3Ex%FF%7D%0F%DC%7F_%A3%D1%1C%08M%FF%B6%B4%1E%F2i4%1A%DB%AF%FD%E6%F6%ED%DF%605%AFO%06p%F4w%BF%B7%91%B1%B1%F5%D3SS%D3%D3S%267%80%FD%CF%BF%D0%EB%F5Z%AD%B5%3Bw%EFi%B5%D6%D6H%DEu%E7%CE%E9%A9%AB%86%EE%D7%8ExR%AD%1F%FE%17%D1%E3g%DB%D6-%CE%09%9C%E8%C0%85n%F7%F8k%7F%B0%C1%B9%D9%9B%E6fo%B2%AF'O%BD%D9%E9%2C%81%E8%AE%7C%F8%C2%81%BD%2B%2B%1F%D6%C7%C6%D7o%9A%CEr%AF%AE~%BA%BA%BA%DAl6%DB%ED%16%80%23G%8F%F5%7B%FD%FF%8E%CE(%25%7F%F2%07%3F%DE%B6u%8Bm%D1h4%DA%ED%D6%F2r%B7%9A%3ER%40%BCr%FC%B5%C9%0D%1B%E2%D6%8DF%C3%C3%DA%E1%23%C7b%F0y%F2%A9%1FF%10%AA%CFLO%D9%8C%85%C5%B7%F7%1F8%18%D50%B3ij%7Cl%EC%EC%B9s%1C%90%EC%F6%5DwGoy%F1%E0%3E%1B%BFc%D7%DD%83%9E%07%A0%BB%BC%B2p%E6%8C%D7%8E%97%09%D5%E8*%87%8F%1E%7B%E2%B1%EFW%9E%EF%3Bp%10e%26%23%40mrr%C2f%1C%3ErLQ%92%0B%0Bg~%BB%FFy-p%07%B4%CA%AAz%87%C6v%00%E3c%97o%DB%BA%C5%8F%2CwW%06S%3B%CBi%CEw%3Ao%9C%FC%93%7F%FA%CA%AB%AFu%97%BB6%C7%F2%9FzSu%D0%E9%2C%F5%FB%BD%82E%81%15%A7%85%AD%0B%87%1B%0A%87%99%FA%13%8F%3F%E2%BF.%2C%BE%DD%EB%F5PuSKv%85%C4%9A%D1%D1K%DC%89%B3G%A2%D6%EF'S%1E%1F%1Fk4%1B%96%22%84%18%E5%AA%1E%95b%7F%E0%10%94%B0%EC%F1R%9FNg%E9%A5%C3G9%C4%ACR%DE%1A%0DurrC%E1%D9%DB%B6%8E%8C%8C%D0%E7%A1%00%C0%DA%F9%CE%92M%DAq%EBl%0Ak%01%1B7n%F8%FA%B6-%1C%02)L%5CAEJ%0D%C6%BC%B4%F4%F3%8Bg%FA%FD%3E%C2%C0%09Se%CA%D1%91%91%1Ds%B3%95%B7%9A%8D%C6%8E%B9%5B%983%B6%F4%B7~%E2%8DS%1B%D5%DCg6M%5D1%3Ev%BE%B3%B4%AE%DD%8An%FE%F1%EA%A7g%DF97%60%172%E8%90V%93Jy%D4~%FFb%B3%D90%D5%5C%B8%D0%EDv%BB%81Cl%8D%90%EF%7D%F7~3%E0%E5nw%CD%E8h%B3%D9%04%B0qrb%E3%C6%89%B3g%DFM%E5%1A%84%90%DA%F9%F7%3B%F3%0B%8B%B6%CA%E8%E8%C8%CC%A6%A9(7%80%DBn%9D%AD%02%02s%1A%3A%CC%7DCEg%2F%BFr%3C%EB%AF%D9%B8%F7%9E%DD%8Dfs%D0%5BH%5C%7F%DD%B5%B6o%BF%DF%DF%BB%EF%F9%13o%9C%B2%09%B7%CD%CD6%9A%CD%5C%0B%85P%0B%E0%A1%97%8Ez%E9%FD%E7%E3O%3E%19p)Q%9B%AE%BA%1A%B5%C0%F1%E3%AF%9F8%E5m%B2%DDn%DD%3E7%5B%F5%13%F2%8A%2B%C6%BEu%DDv%1B9%F4%D2%D1%0B%CB%CB%AF%9F8%F9%C9%EA%AA%E9%F4%FA%EB%B6%AB'%12%40%0DD%BF%DF%7Fn%DF%81g%7F%F9%AB%F7%CFw2%84-w%9F%DB%BB%FF'%3F%FBy%AF%D7%2B%8F%13%08_B9%80%23%07%11%86%08%2F%1E%3A%E2Gff%A6gf%A6%8B%1C%A1%D9%BC%F7%9E%BB%B2K%CC%2F%CE%CF%2F%00%EC%F7%7B%87%DC%BB_%DB%B6%B5%DDn%23%FA%0A)%B7%CC%DDQ%C9%F8%C4eu%95%3C%CE1%CA%05%89%7F%89%E12%3D%A4%B2%23J%05%17%15Be%E3%5Ch%7B%A9%5CA%24%A8%3B%AAN%8C%A1%CD%B6%5B%94%12%8Ef%91j%C2%A2%E4Z%22L%F2B%E2%98%40%8A2*%D2%5E%D7%DE%3C%B3%E9%B2%CB%9A%A7O%2F%BC%7F%BEC%C9%D5p.I25a%3C%A9q%A0%F2%99%CF%7F%E1J%A0%AC%D1X%9C%BEL%A3)%83%C9z%E2%AFQta%8C%C9%A2T%16!%B0f%CD%C8%B3%CF%3C%7D%F9%E7%3E%BBn%5D%7B%F3%D53%CB%DD%95%8F%FE%F1Q%91%C4g%C66E*x%8AKm%3D%A1l%60F%8FLih%ED%9B%A3%BC%F9%A8%AB%7FI%04Z!o%04HIz%B8p%BFyf%C6%DB%FA%E6%AB7%E5%95s%C1F3%84%B88%25%17%92%24k%B9%F8%8D%12%05%94%04%B8%17%87%96%A0%1A%25b%0CJ%22%CDBPj%200d%C4%D4%BA%2CpXV%DC%EB%F5%95%25%A0%CF%8F%18%F9%E4%BCxb%9F%E3Z5%13-%87q%C70De%04%A5o%82%C3tG%00%A5%02%BFd%20%12%C8%87%CC%FB(%9FJy%EB%F4%BC%25%20%00%DE%3A%3D%AFr%E6%5B%8D%9F%00%BF8%1D%C1E%B9%F1%96%1DF%AD%89%18%F5%2CVlJ%26%FE%90%B9%7D_%C7%D2%95%B3%DA%1F%12X%B3A%99i%05%83Hf%AEY3z%CD%97%AF%06%F1%D7w%DE%B9%B0%DC%85%D2%DB%A05r%9C_F%EET%5B%5Ei%E4%86%9Bo5%22%9D%AE%D7TT%C1%D9S%3CP%E5%1A%5CJ%94d%D9%7F%2C%D0%D3o%C1%B2c%26C%1A%A4E%F7%B5%1C%AF%83%12%7Bu%BE%99%16Un%8D%3DE%3B%B8N%9Fu%14%CB%8EO%D2%5C%A5%87%E4Z%8A%92%09Y%25%A5%CB.f%DA%40%AC%F1%A7%20-J%0E'5%26%A6%D7u%A1%EC%AA%23g%ACY%BB%05%86%CC%3C%EBF%03%89%94%F1%F2%C2%C4N%89XR%1EO%18%08I%3DT%E6V%2B%60DT%E2p%13G%15%BD3ux%13%D3Y%2Fr%C1%B2%7D%E0%A9%E5%92xs%14%19K%CA%2Cm%2B%AE%FA)%FB%80%3E%BB%CF%CESd%C1%1C%92J%7B%D6%2C%1E3%81%A3%26%82F%99C%DD%3D%18%C5%E7%98%DB%C0%DC%24c%05%9D%8CY%0E9%22x%18-%92OC.x%A0%F5T%18r%7C%F0%2C%19%C9%D47%B5%F9R%D4Re%1F%AE%D2%92a%B5%C5%EA%DB%9E%BE%81%60%7D%18%0E6gQ%B6%7D%8A%5EmQ%B4%90%BE.%13%80%A8%2BM%1A%3D00w%D0%CD%90%D5jb%8AR%60VLJ%247%EF%9C%01e%84%8CT%B5X%9D%20%CC%5E%05%ED(Jn%B8%5B%2B6%13%8A%10P19%11%C4u%DF%F5%60%D1%8C%CA%BF%7D%10%7C%9F%99%D9%E24%7DP%92%DB%98f%DF%7Dd%A1%BF%B22V%3D%07R%8C%8D%D6m%82%D8%AFt%14%60%AA%C1%AB%AE%FE%CF%AC%3E%A3%96i%A9%A8%0C%06p%16%7Dg%8B%13%94%B2%AF%EE%D0%3A%C7%2B%D7%0A%CD7%23e%E6%C8J%7BS%B4%DF%91%E0%91%F5L%E1%FB%8Eg%8A%92A%DB%2B%C1%F5%02%24%C2%BA%C4%04%C3%E5%C4q%F7%04%82*%5E%84%D8%D8%E6%D3%F6MH%7D%D4%DC%182%10%CE%A9.%8A%D6%10%AC9n%AA%A9%97%CE%00%DFZ%AB%24%CF%D9%8C%ED%9E%BCj%C4%22%8A%98%F5%09%ED%B7r%BC%91%88%83%92l%0A%F4%9D%BE%A2S%AE%2B%94%0E%5E%CB-%BA%12x-%F9%D2~%5CH%BD%00C%2B%06%E6%3C2D%DA%3E6%EE%CC%23B%E5%97%04%5CJ%5B%02%AEK%8D%83o%0A%A5%BF%81d%19%15H%FE%13%D9%98%FA%F6%ED2!3%00%00%00%00IEND%AEB%60%82" />
+      </div>
+    </div>
+    <div id="content">
+      <div xmlns="">
+        <p></p>
+        <h2 id="createdby">Created by vv465629</h2>
+        <h3>10/08/2018 9:20:00</h3>
+      </div>
+      <div class="section" xmlns="">
+        <table>
+          <colgroup>
+            <col width="60%" />
+            <col width="15%" />
+            <col width="15%" />
+            <col width="10%" />
+          </colgroup>
+          <tr class="dark darkheader">
+            <th class="first">Test name</th>
+            <th>Target Service</th>
+            <th>Date and time</th>
+            <th class="last">Test result</th>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixTrust may be missing, disabled or refer to the wrong network ports. <!--Trust--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixAnalytics may be missing, disabled or refer to the wrong network ports. <!--Analytics--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixConfigurationLogging may be missing, disabled or refer to the wrong network ports. <!--ConfigurationLogging--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixDelegatedAdmin may be missing, disabled or refer to the wrong network ports. <!--DelegatedAdmin--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixHostService may be missing, disabled or refer to the wrong network ports. <!--Host--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixAppLibrary may be missing, disabled or refer to the wrong network ports. <!--AppLibrary--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixMonitor may be missing, disabled or refer to the wrong network ports. <!--Monitor--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixMachineCreationService may be missing, disabled or refer to the wrong network ports. <!--MachineCreation--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixConfigurationService may be missing, disabled or refer to the wrong network ports. <!--Configuration--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixEnvTest may be missing, disabled or refer to the wrong network ports. <!--EnvTest--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixOrchestration may be missing, disabled or refer to the wrong network ports. <!--Orchestration--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixStorefront may be missing, disabled or refer to the wrong network ports. <!--Storefront--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Failed</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p><ul><li class="Warning"><span class="testTargetName">Controller ddcbsv1001d.adgbs.com: </span>The Citrix firewall rule CitrixADIdentityService may be missing, disabled or refer to the wrong network ports. <!--ADIdentity--><br /><em>Rerun the service executable with the command line argument -CONFIGUREFIREWALL to repair the firewall configuration.</em></li></ul></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Warnings</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">LoggingDBConnection_DisplayName</p>LoggingDBConnection_Description<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:43</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:17:59</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:17:59</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:17:59</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check for disabled administrators</p>Check whether any administrators are disabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:17:59</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:44</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service is using the correct settings for the consolidating data.</p>Ensure all data consolidation settings are loaded correctly by runtime components.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Active Directory for administrator</p>Check that the administrator is in Active Directory.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service data querying module has started.</p>Ensure the Citrix Monitor service data querying module has started properly.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to peer service instances.</p>Test that instances of this Citrix service can be contacted on other controllers.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the data collection has started.</p>Ensure all data collection components are started.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">User SID resolution.</p>Checks if the Configuration Logging SID identities can be resolved from Active Directory. <p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to peer service instances.</p>Test that instances of this Citrix service can be contacted on other controllers.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:19:56</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:00</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service data processing has started correctly.</p>Ensure Citrix Monitor service data processing has started successfully.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:46</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to peer service instances.</p>Test that instances of this Citrix service can be contacted on other controllers.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check feature names are valid.</p>Check that the feature names used by the service are defined in the list of available features.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check role configuration files language</p>Check that all the imported role configuration files are in the same language.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:44</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to peer service instances.</p>Test that instances of this Citrix service can be contacted on other controllers.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:45</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check firewall rules are enabled.</p>Check that required firewall rules are enabled.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:01</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:51</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:53</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Valid Logging Locale</p>Checks if a valid logging locale is set.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:44</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check feature names are valid.</p>Check that the feature names used by the service are defined in the list of available features.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Configuration Logging Licensed</p>Checks that the product edition supports Configuration Logging.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check that administrators are domain users</p>Checks that each administrator can be found in Active Directory.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Machine SID resolution</p>Checks if the Configuration Logging SID identities can be resolved from Active Directory. <p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service is using the correct settings for analyzing and removing unnecessary data.</p>Ensure all data-reaping configuration settings are properly loaded by runtime components.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check that the license server information is consistent.</p>Check that the LicenseServerName and the LicenseServerUri host name in the Configuration Service Site object match.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check if custom roles are allowed</p>Checks whether the product edition supports custom roles.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to peer service instances.</p>Test that instances of this Citrix service can be contacted on other controllers.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check CDF tracing is enabled.</p>Check that CDF tracing is enabled in the configuration file.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:04</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:44</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:52</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:04</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Orchestration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:04</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:02</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:46</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:04</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Storefront</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the database can be reached.</p>Test the connection details can be used to connect successfully to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Configuration Logging</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check stored Configuration service instances.</p>Check that stored Configuration service instances are valid.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check registration state.</p>Check the service is in the completed service working state and not in a partial state prior to being a fully-bootstrapped site.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Host</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check there is a recent database backup.</p>Check there is a recent database backup.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:04</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Read Committed Snapshot is enabled.</p>Check if the Read Committed Snapshot database option is enabled.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service is using the correct settings for grooming the data.</p>Ensure all data grooming configuration settings are loaded properly.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:43</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check HTTP/HTTPS namespace reservation.</p>Check that required URL endpoints have been reserved in the HTTP/HTTPS namespace.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Analytics</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check roles for permissions</p>Check for roles that have no permissions.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check Citrix Broker service communications.</p>Check the Citrix Broker service can be contacted.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the database schema matches the expected schema.</p>Check for any unexpected discrepancies in the database schema.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:43</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test connectivity to Citrix core services.</p>Test that the Central Configuration, Configuration Logging and Delegated Administration services can be contacted on each controller.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Broker</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Machine Creation</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AD Identity</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database version matches the expected version.</p>Check the database version matches the expected version.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check the Citrix Monitor service can access its database.</p>Ensure the Citrix Monitor service can access its database and that the database schema is not corrupt.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test the service is registered with the Configuration service.</p>Test that all service instances published by the service are registered with the Configuration service.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1002d.adgbs.com; ddcbsv1001d.adgbs.com</p></td>
+            <td>Environment Test</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check SQL Server version and service-pack level.</p>Check SQL Server version and service-pack level meet the requirements.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Monitor</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Test file-based logging.</p>Test the service has necessary access permissions to log files and that sufficient disk space is available.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>AppLib</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check that administrator has rights</p>Check for administrators with no rights.<p class="runOnSite">Test run on entire Site</p></td>
+            <td>Delegated Administration</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+          <tr>
+            <td class="first">
+              <p class="testName">Check database updates (XDUs) have been applied.</p>Check that database updates (XDUs) have been discovered on the file system and applied to the database.<p><span class="controllersHdr">Test run on controllers: </span>ddcbsv1001d.adgbs.com; ddcbsv1002d.adgbs.com</p></td>
+            <td>Trust</td>
+            <td>10/08/2018 9:18:03</td>
+            <td class="last">Successful</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

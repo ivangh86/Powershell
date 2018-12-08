@@ -1,0 +1,3 @@
+"Ping","Server","CPU Average / 30 sec","CPU Max","CPU Min","Memory Usage","%Ocupado C:","%Ocupado D:","%Ocupado E:","DiskQueue","3 TopProcess","3 TopProcessPercent","UpTime"
+"GREENOK","XACISV3086P","1,72%","3,13%","0,59%","15.1%","C:68.05%","D:38.4%","E:64.53%","0","wsmprovhost#1--StatusTray#2--explorer#2","5--0--0","0"
+"GREENOK","XACISV3086P","1,72%","3,13%","0,59%","15.1%","C:68.05%","D:38.4%","E:64.53%","0","wsmprovhost--StatusTray#2--explorer#2","5--0--0","0"
