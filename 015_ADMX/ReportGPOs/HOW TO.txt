@@ -1,4 +1,0 @@
-0. Se tiene que ejecutar en un server de GPOs
-1. En el .txt "GPOs" poner las GPOs que se quiere sacar un report.
-2. Ejecutar script "ReportGPOs.PS1", deja un .txt donde están los logs "logReportGPOs.txt".
-3. Dentro de la carpeta Reports, crea una carpeta con la fecha de hoy (si no está) y dentro están los reports en .html

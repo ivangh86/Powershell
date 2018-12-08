@@ -1,1 +1,0 @@
-relog "\\capelo\Soft_wintel\Citrix\Template_perfmon\CAPACITY ABRIL 2017\20170427_0202\XAPISV0225P_20170427-0002\Vital Signs.blg" -cf LOGCounter.txt -o "\\capelo\Soft_wintel\Citrix\Template_perfmon\CAPACITY ABRIL 2017\20170427_0202\XAPISV0225P_20170427-0002\Vital Signs Count.blg"

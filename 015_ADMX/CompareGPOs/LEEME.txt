@@ -1,4 +1,0 @@
-1. Poner la ruta de la carpeta donde estan los reports de las GPOs con fecha más antigua dentro de "pathFolderFirstGPOs.txt".
-2. Poner la ruta de la carpeta donde estan los reports de las GPOs con fecha más actual dentro de "pathFolderSecondGPOs.txt".
-3. Ejecutar el script.
-4. Mirar el "logCompareGPOs.txt" donde saldrán las GPOs que no son iguales en los settings.

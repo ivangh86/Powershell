@@ -1,3 +1,0 @@
-0. Borrar archivo txt que corresponda con el nombre.
-1. Dentro de "nameADM.txt" poner el nombre de la .adm (ejemplo: "nombre.adm"), solo poner 1.
-2. Ejecutar el script, saldran errores de carpetas ocultas que no tenemos permisos, en esas carpetas no podemos ver si hay la .adm.

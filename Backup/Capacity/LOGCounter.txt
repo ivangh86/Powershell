@@ -1,7 +1,0 @@
-\Processor Information(_Total)\% Processor Time
-\System\Processor Queue Length
-\Memory\Available MBytes
-\LogicalDisk(_Total)\Avg. Disk sec/Read
-\LogicalDisk(_Total)\Avg. Disk sec/Write
-\LogicalDisk(_Total)\Current Disk Queue Length
-\Terminal Services\Active Sessions

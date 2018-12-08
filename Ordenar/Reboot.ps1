@@ -1,1 +1,0 @@
-﻿Get-BrokerRebootScheduleV2 |Where-Object {$_.Enabled -eq $false}|Select-object Name,Enabled,StartTime,RebootDuration | Format-Table -AutoSize
